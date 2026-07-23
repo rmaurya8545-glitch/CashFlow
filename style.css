@@ -1,0 +1,189 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:#2d3b4d;
+    min-height:100vh;
+    margin:0;
+    padding:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+}
+.container{
+    width:90%;
+    max-width:600px;
+    margin:20px auto;
+    background: #d1d1dd;
+    border-radius: 16px;
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+    padding:20px;
+    box-shadow: 0 10px 40px black;
+}
+h1{
+    text-align:center;
+    color:rgb(8, 8, 44);
+    margin-bottom:30px;
+}
+
+.summary{
+    display:grid;
+    gap:15px;
+}
+.card{
+    padding:20px;
+    border-radius: 15px;
+    background: #f0f4ff;
+}
+.card h3{
+    color:#081526;
+}
+.card p{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top:10px;
+}
+.form-section{
+    margin-top:25px;
+    width:100%;
+}
+label{
+    font-weight: bold;
+    margin:12px 0 6px;
+    display:block;
+}
+input{
+    width:100%;
+    padding:14px;
+    border:2px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+}
+#expenseName{
+    border-radius: 10px;;
+}
+button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:none;
+    border-radius: 10px;
+    background: #4169e1;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer
+}
+button:hover{
+    opacity:0.9;
+}
+.success{
+    color:black;
+    margin-top:10px;
+}
+.error{
+    color:red;
+    margin-top:10px;
+}
+.transaction{
+    margin-top:30px;
+}
+.transaction h2{
+    margin-bottom:15px;
+}
+#expenseList{
+    list-style:none;
+}
+#expenseList li{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    background: #f8fafc;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+#expenseList small{
+    display:block;
+    color:#64748b;
+    margin-top:5px;
+}
+#expenseList button{
+    width:auto;
+    margin:0;
+    padding:8px 12px;
+    background: #ef4444;
+}
+.form-section input,
+.form-section select,
+.form-section button{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom: 15px;
+    border:1px solid;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.chart-section{
+    background: white;
+    padding:20px;
+    border-radius: 12px;
+    margin:20px 0;
+    text-align: center;
+}
+#expenseChart{
+    max-width:350px;
+    margin:0 auto;
+}
+
+@media(max-width:600px){
+
+    body{
+        padding:10px;
+    }
+    .container{
+        width:100%;
+        padding:20px 15px;
+        border-radius: 15px;
+    }
+
+    h1{
+        font-size: 24px;
+        text-align: center;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .form-section input,
+    .form-section button{
+        width:100%;
+        font-size:16px;
+        padding:14px 12px;
+    }
+
+    .chart-section{
+        max-width: 100% !important;
+        height:300px !important;
+        margin:20px 0;
+        padding:15px;
+        border-radius: 10px;
+        background: #f8f9fa;
+    }
+
+    .chart-section canvas{
+        max-width:100% !important;
+        height:250px !important;
+    }
+    #salaryMessage{
+        font-size: 14px;
+        text-align: center;
+    }
+
+}
+    
+
