@@ -3,7 +3,7 @@
 
 ## Project
 
-Cash Flow web app --> A Responsive  Web Page.
+Cash Flow web app --> A Responsive  Web app.
 
 ## 1. ChatGPT
 
