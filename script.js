@@ -3,7 +3,7 @@
 const salaryInput = document.getElementById('salaryInput');
 const dateInput = document.getElementById('dateInput');
 const salaryBtn = document.getElementById('salaryBtn');
-const SalaryDisplay = document.getElementById('SalaryDisplay');
+const salaryDisplay = document.getElementById('salaryDisplay');
 const expenseDisplay= document.getElementById('expenseDisplay');
 const balanceDisplay = document.getElementById('balanceDisplay');
 const expenseName = document.getElementById('expenseName');
@@ -37,7 +37,7 @@ salaryBtn.addEventListener('click',function(){
     salary = salaryValue;
     localStorage.setItem('salary',salary);
 
-    SalaryDisplay.textContent = salary.toLocaleString("en-IN");
+    salaryDisplay.textContent = salary.toLocaleString("en-IN");
     updateBalance();
 
 
@@ -119,7 +119,7 @@ console.log("expense: ",expenses);
     expenseDisplay.textContent = totalExpense.toLocaleString("en-IN");
 
     balanceDisplay.textContent = remainingBalance.toLocaleString("en-IN");
-    SalaryDisplay.textContent = salary.toLocaleString("en-IN");
+    salaryDisplay.textContent = salary.toLocaleString("en-IN");
 }
     
     // delete expense
@@ -188,6 +188,6 @@ document.addEventListener('DOMContentLoaded',() =>{
     displayExpense();
     updateBalance();
     updateChart();
-    SalaryDisplay.textContent = salary;Array.toLocaleString("en-IN");
+    salaryDisplay.textContent = salary;Array.toLocaleString("en-IN");
     dateInput.valueAsDate = new Date();
 });
