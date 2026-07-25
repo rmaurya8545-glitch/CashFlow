@@ -185,5 +185,14 @@ button:hover{
     }
 
 }
+.success{
+    color:green;
+    font-size:13px;
+    margin-top:5px;
+}
+.input-error{
+    border:2px solid red;
+    box-shadow:0 0 0 3px rgba(230,55,87,0.1);
+}
     
 
