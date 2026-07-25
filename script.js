@@ -123,6 +123,10 @@ expenseBtn.addEventListener('click',function(){
 
 });
 
+expenseAmount.addEventListener("input",function(){
+    expenseAmount.classList.remove('input-error');
+});
+
 //3. display expense
 
 function displayExpense(){
