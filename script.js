@@ -24,20 +24,36 @@ let myChart;
 
 salaryBtn.addEventListener('click',function(){
 
-    const salaryValue =Number(salaryInput.value);
+    salaryInput.value.trim() === "";
+    salaryMessage.textContent = "";
+
+    const salaryValue =Number(salaryInput.value.trim());
     if(
-        salaryInput.value === "" || salaryValue <= 0
+        salaryInput.value.trim() === "" ||
     ){
         salaryMessage.textContent = "❌ Please Enter a valid Salary";
 
         salaryMessage.className = "error";
+        salaryInput.classList.add('input-error');
+        return;
+    }
+    if(salaryValue > 1000000000){
+        salaryMessage.textContent = "wrong! Salary can not be more than ₹1000000000";
+        salaryMessage.className = "error";
+        salaryInput.classList.add('input-error');
+        return;
+    }
+    if(!/^\d+(\.\d{1,2})?$/.test(salaryInput.value.trim())){
+        salaryMessage.textContent = "wrong! max 2 decimal place allowed";
+        salaryMessage.className = "error";
+        salaryInput.classList.add('input-error');
         return;
     }
 
     salary = salaryValue;
     localStorage.setItem('salary',salary);
 
-    salaryDisplay.textContent = salary.toLocaleString("en-IN");
+    salaryDisplay.textContent = salary.toLocaleString("en-IN" ,{minimumFractionDigits:2,maximumFractionDigit:2{});
     updateBalance();
 
 
@@ -106,8 +122,6 @@ function displayExpense(){
 //4. Update Balance
 
 function updateBalance(){
-console.log("Salary: ",salary);
-console.log("expense: ",expenses);
 
     let totalExpense = 0;
 
