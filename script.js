@@ -68,12 +68,37 @@ salaryBtn.addEventListener('click',function(){
 //2. Add Expense
 
 expenseBtn.addEventListener('click',function(){
+
+    if(!salary || salary <=0){
+        expenseMessage.textContent = " wrong! Please enter a valid salary first.";
+        expenseMessage.className = "error";
+        salaryInput.classList.add('input-error');
+        salaryInput.focus();
+        return;
+    }
     const name = expenseName.value.trim();
     const amount = Number(expenseAmount.value);
-    if(name === "" || expenseAmount.value === "" || amount <=0){
+    
+    if(name === "" || expenseAmount.value === "" || amount <=0 || isNaN(amount)){
         expenseMessage.textContent = "❌ Please Enter valid expense details";
         expenseMessage.className = "error";
         return ;
+    }
+
+    if(amount > 1000000000){
+        expenseMessage.textContent = "wrong! Amount can not be more than ₹1000000000";
+        expenseMessage.className = "error";
+        return;
+    }
+
+    let totalExpense = expenses.reduce((sum,exp) => sum + Number(exp.amount),0);
+    let remainingBalance = salary - totalExpense;
+
+    if(amount > remainingBalance){
+        expenseMessage.textContent = `wrong! Not enough balance only ₹${remainingBalance} left`;
+        expenseMessage.className = "error";
+        expenseMessage.classList.addd('input-error');
+        return;
     }
 
     const newExpense = {
